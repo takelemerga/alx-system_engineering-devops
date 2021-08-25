@@ -1,0 +1,15 @@
+total 52
+drwxrwxr-x 2 tolaa tolaa 4096 ኦገስ 24 21:50 .
+drwxrwxr-x 4 tolaa tolaa 4096 ኦገስ 24 20:48 ..
+-rwxrwxr-x 1 tolaa tolaa   29 ኦገስ 24 20:56 0-hello_world
+-rwxrwxr-x 1 tolaa tolaa   31 ኦገስ 24 21:10 1-confused_smiley
+-rwxrwxr-x 1 tolaa tolaa   28 ኦገስ 24 21:16 2-hellofile
+-rwxrwxr-x 1 tolaa tolaa   39 ኦገስ 24 21:19 3-twofiles
+-rwxrwxr-x 1 tolaa tolaa   29 ኦገስ 24 21:22 4-lastlines
+-rwxrwxr-x 1 tolaa tolaa   29 ኦገስ 24 21:25 5-firstlines
+-rwxrwxr-x 1 tolaa tolaa   40 ኦገስ 24 21:42 6-third_line
+-rwxrwxr-x 1 tolaa tolaa   88 ኦገስ 24 21:45 7-file
+-rwxrwxr-x 1 tolaa tolaa   36 ኦገስ 24 21:49 8-cwd_state
+-rw-rw-r-- 1 tolaa tolaa   17 ኦገስ 24 21:46 \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)
+-rw-rw-r-- 1 tolaa tolaa    0 ኦገስ 24 21:50 ls_cwd_content
+-rw-rw-r-- 1 tolaa tolaa   25 ኦገስ 24 20:50 README.md
