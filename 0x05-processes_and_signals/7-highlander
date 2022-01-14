@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Displays To infinity and beyond indefinitely with a sleep 2 in between each iteration and I am invincible!!! when receiving a SIGTERM signal
+function fn()
+{
+    echo "I am invincible!!!"
+}
+
+# print I am invincible!!! when receiving a SIGTERM signal
+trap fn SIGTERM
+
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
