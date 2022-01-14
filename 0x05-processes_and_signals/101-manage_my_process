@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Manages the script manage_my_process, start, stop and restart
+
+
+argument="$1"
+ 
+if [ "$argument" == "start" ]
+then
+  ./manage_my_process &
+  echo  $BASHPID > /var/run/my_process.pid
+  echo "manage_my_process started"
+
+elif [ "$argument" == "stop" ]
+then
+  pkill "$(pgrep -f /manage_my_process)" 
+  rm /var/run/my_process.pid
+  echo "manage_my_process stopped"
+
+elif [ "$argument" == "restart" ]
+then
+  "$0" stop >& /dev/null
+  "$0" start >& /dev/nul
+  echo "manage_my_process restarted"
+
+else
+  echo "Usage: manage_my_process {start|stop|restart}"
+fi
