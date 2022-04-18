@@ -3,5 +3,5 @@
 sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
 sudo useradd nginx 
 chown nginx:nginx /etc/nginx/nginx.conf
-chown 755 /etc/nginx/nginx.conf
-sudo -u nginx service nginx restart
+chown 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
