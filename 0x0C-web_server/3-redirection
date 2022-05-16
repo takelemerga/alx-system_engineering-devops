@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get -y install nginx
 echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
 
-config_to_redirect=\
+# config_to_redirect=\
 "server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -14,7 +14,7 @@ config_to_redirect=\
         server_name _;
 
             # rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-             sed -i 37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+             sed -i '37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'/etc/nginx/sites-available/default
         location / {
                 try_files \$uri \$uri/ =404;
         }
@@ -25,7 +25,7 @@ config_to_redirect=\
 }
 "
 
-echo '$config_to_redirect' > /etc/nginx/sites-available/default
+# echo '$config_to_redirect' > /etc/nginx/sites-available/default
 if [ "$(pgrep nginx)" -le 0 ];
 then
     service nginx start
