@@ -24,7 +24,7 @@ config_to_redirect=\
 }
 "
 
-echo "$config_to_redirect" > /etc/nginx/sites-enabled/default
+echo "$config_to_redirect" > /etc/nginx/sites-available/default
 if [ "$(pgrep nginx)" -le 0 ];
 then
     service nginx start
