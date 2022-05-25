@@ -30,7 +30,11 @@ config_to_redirect=\
 echo "$config_to_redirect" > /etc/nginx/sites-enabled/default
 
 # Setup 404 page
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html
-sed -i '38i\error_page 404 /error_404.html;' /etc/nginx/sites-available/default
 
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html
+sed -i '$ i error_page 404 /error_404.html\
+location = /error_404.html{\
+   root /var/www/html;\
+        internal;\
+}' /etc/nginx/sites-available/default
 sudo service nginx start
