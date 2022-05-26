@@ -1,4 +1,49 @@
 #!/usr/bin/env bash
 # Configures a new Ubuntu server with a custom HTTP header response
+#!/usr/bin/env bash
+# Install nginx and start it
+apt-get -y install nginx
+
+# Firewall setting: Allow Nginx to serve on HTTP
+ufw allow 'Nginx HTTP'
+
+# Create a new index.html file that will be used over the default index.nginx-debian.html
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html 
+
+# Redirect to /redirect_me to a youtube video
+config_to_redirect=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+               root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+
+             rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+
+        # if (\$request_filename ~ redirect_me){
+          # rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        # }
+}
+"
+echo "$config_to_redirect" > /etc/nginx/sites-enabled/default
+
+# Setup 404 page
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html
+# sed -e '1i error_page 404 /error_404.html;\
+# location = /error_404.html{\
+#   root /var/www/html;\
+#        internal;\
+# }' /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server/ a  error_page 404 /error_404.html;\n\
+ location = /error_404.html{\n\
+  root /var/www/html;\n\
+       internal;\n\
+ }" /etc/nginx/sites-available/default
+sudo service nginx start
 sed -i "/listen 80 default_server/a \\\tadd_header X-Served-By $(hostname);" /etc/nginx/sites-available/default
 service nginx restart
