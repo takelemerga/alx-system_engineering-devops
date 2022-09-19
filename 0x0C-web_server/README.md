@@ -1,1 +1,1 @@
-Web server
+scripts to configure Web server
