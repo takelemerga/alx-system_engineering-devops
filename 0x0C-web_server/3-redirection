@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-#install ngix and have a file that returns the string "Hello World! inside
-
-sudo apt-get update
-sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+# redirecting
 
  config_to_redirect=\
 "server {
