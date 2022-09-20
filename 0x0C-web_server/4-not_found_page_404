@@ -2,7 +2,7 @@
 # Install nginx and start it
 apt-get -y install nginx
 
-# Firewall setting: Allow Nginx to serve on HTTP
+# for Firewall setting: Allow Nginx to serve on HTTP
 ufw allow 'Nginx HTTP'
 
 # Create a new index.html file that will be used over the default index.nginx-debian.html
