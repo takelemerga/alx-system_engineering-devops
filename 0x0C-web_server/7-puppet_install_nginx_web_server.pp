@@ -1,5 +1,4 @@
 # Setup nginx server
-
 package { 'nginx':
   ensure     => 'installed',
 }
