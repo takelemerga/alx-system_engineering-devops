@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs and setup haproxy
+# Installs and setup haproxy load balancer
 
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy
@@ -16,8 +16,8 @@ echo "
    balance roundrobin
    option httpclose
    option forwardfor
-   server 1498-web-01 3.226.97.36:80 check
-   server 1498-web-02 34.204.179.174:80 check
+   server 1498-web-01 3.238.125.86:80 check
+   server 1498-web-02 3.237.33.25:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
