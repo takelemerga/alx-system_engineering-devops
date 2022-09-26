@@ -1,4 +1,4 @@
-# puppet manifest creating a custom HTTP header response
+# with the help of puppet manifest creating a custom HTTP header response
 exec { 'update':
   command  => 'sudo apt-get update',
   provider => shell,
