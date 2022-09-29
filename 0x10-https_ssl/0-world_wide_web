@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2086
-# display information about subdomains
+# configure domain zone and display information about subdomains
 
 display_dig_info ()
 {
@@ -11,7 +11,7 @@ display_dig_info ()
 
 for subdomain in "www" "lb-01" "web-01" "web-02"
 do
-    if [ -z "$2" ] || [ "$2" == "$subdomain" ] ;
+    if [ -z "$2" ] || [ "$2" == "$subdomain" ];  # if parameter #2  zero length or equal to subdomain
     then
 	display_dig_info "$1" "$subdomain"
     fi
