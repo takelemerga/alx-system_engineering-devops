@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that returns information using REST API
+Python script that accept integer and returns information using REST API
 """
 import requests
 from sys import argv
