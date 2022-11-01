@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module """
+""" querry module """
 import requests
 import sys
 
