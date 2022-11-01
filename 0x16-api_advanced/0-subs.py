@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Reddit API module """
+"""Reddit API query module """
 import requests
 import sys
 
