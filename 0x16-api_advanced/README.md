@@ -1,1 +1,1 @@
-Reddit API 
+practice on querrying Reddit API 
